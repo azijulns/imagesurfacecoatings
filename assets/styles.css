@@ -128,7 +128,8 @@ body .ni-top-bar__social .ni-top-bar__social-link:hover {
   fill: var(--primary-color);
 }
 
-.ni-header {
+.shopify-section:has(.ni-header)
+{
   background-color: var(--light-color);
   border-bottom: 1px solid #eee;
   position: sticky;

@@ -1,0 +1,92 @@
+<!-- sections/media-section.liquid -->
+<section class="ni-media">
+  {% if section.settings.background_image != blank %}
+    <figure class="ni-media__bg">
+      {{ section.settings.background_image | image_url: width: 2000 | image_tag:
+        loading: 'lazy',
+        alt: section.settings.background_image.alt,
+        class: 'ni-media__bg-img'
+      }}
+    </figure>
+  {% else %}
+    <div class="ni-media__bg placeholder-background">
+      {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+    </div>
+  {% endif %}
+
+  <div class="ni-media__overlay" style="opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }};"></div>
+
+  <div class="ni-container">
+    <div class="ni-media__inner-content">
+      {% if section.settings.icon != blank %}
+        <div class="ni-media__icon">
+          {{ section.settings.icon | image_url: width: 100 | image_tag:
+            loading: 'lazy',
+            alt: section.settings.icon.alt
+          }}
+        </div>
+      {% endif %}
+
+      {% if section.settings.title != blank %}
+        <h2 class="ni-media__title">{{ section.settings.title }}</h2>
+      {% endif %}
+
+      {% if section.settings.button_text != blank %}
+        <a href="{{ section.settings.button_link }}" class="ni-btn--primary ni-media__btn">
+          {{ section.settings.button_text }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Contact Call To Action",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Overlay Opacity",
+      "default": 50
+    },
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "Icon Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "See Our Team In Action"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "CONTACT US"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contact Call To Action",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

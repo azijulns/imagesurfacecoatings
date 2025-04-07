@@ -61,7 +61,17 @@
             },
             "block_order": ["service_1", "service_2"],
             "settings": {}
+        },
+        "contact-cta": {
+            "type": "contact-cta",
+            "settings": {
+                "background_image": "shopify://shop_images/media-bg.jpg",
+                "overlay_opacity": 50,
+                "title": "See Our Team In Action",
+                "button_text": "CONTACT US",
+                "button_link": ""
+            }
         }
     },
-    "order": ["hero-section", "service-cards"]
+    "order": ["hero-section", "service-cards", "contact-cta"]
 }

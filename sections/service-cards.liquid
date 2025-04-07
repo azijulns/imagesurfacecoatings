@@ -1,0 +1,93 @@
+<section class="ni-services">
+  <div class="ni-container ni-flex ni-justify-btwn">
+    {% for block in section.blocks %}
+      <article class="ni-services__card" {{ block.shopify_attributes }}>
+        <div class="ni-services__image-wrapper">
+          {% if block.settings.image %}
+            {{ block.settings.image | image_url: width: 600 | image_tag:
+              loading: 'lazy',
+              class: 'ni-services__image',
+              alt: block.settings.image.alt
+            }}
+          {% else %}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          {% endif %}
+        </div>
+
+        <div class="ni-services__content">
+          {% if block.settings.description != blank %}
+            <div class="ni-services__description rte">
+              {{ block.settings.description }}
+            </div>
+          {% endif %}
+        </div>
+
+        <div class="ni-services__footer">
+          {% if block.settings.title != blank %}
+            <h2 class="ni-services__title">
+              <a href="{{ block.settings.link }}">{{ block.settings.title }}</a>
+            </h2>
+          {% endif %}
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Service Cards",
+  "max_blocks": 2,
+  "blocks": [
+    {
+      "type": "service",
+      "name": "Service Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Service Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Service Title",
+          "default": "Residential"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Service Description",
+          "default": "<p>Residential epoxy coating services can transform your basement, garage, or outdoor area. We offer many color and flake options to make your floors or outdoor surfaces look great!</p>"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Service Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Service Cards",
+      "blocks": [
+        {
+          "type": "service",
+          "settings": {
+            "title": "Residential",
+            "description": "<p>Residential epoxy coating services can transform your basement, garage, or outdoor area. We offer many color and flake options to make your floors or outdoor surfaces look great!</p>"
+          }
+        },
+        {
+          "type": "service",
+          "settings": {
+            "title": "Commercial",
+            "description": "<p>Commercial epoxy coating solutions provide durable, long-lasting floors for warehouses, factories, and retail spaces. Our industrial-grade epoxy withstands heavy traffic and equipment.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -25,50 +25,9 @@
         "menu": "main-menu"
       }
     },
-    "hero-section": {
-      "type": "hero-section",
-      "blocks": {
-        "slide_ByhdDU": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/slide-1.webp",
-            "subtitle": "Epoxy Floor Covering Lucasville, OH, and Surrounding Areas.",
-            "title": "Getting your home coating is easy.",
-            "description": "<ul><li>  Professional epoxy flooring services for residential and  commercial application.</li><li>Many color and fleck options to perfect your floors with a  permanent epoxy coating.<br/><br/></li></ul>",
-            "button_1_text": "BOOK NOW!",
-            "button_1_link": "",
-            "button_1_style": "primary",
-            "button_2_text": "CONTACT US!",
-            "button_2_link": "",
-            "button_2_style": "secondary"
-          }
-        },
-        "slide_P4Lgrd": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/slider-2.webp",
-            "subtitle": "Epoxy Floor Covering Lucasville, OH, and Surrounding Areas.",
-            "title": "Getting your home coating is easy.",
-            "description": "<p>Professional epoxy flooring services for residential and  commercial application. Many color and fleck options to perfect   your floors with a permanent epoxy coating.<br/><br/></p>",
-            "button_1_text": "BOOK NOW!",
-            "button_1_link": "",
-            "button_1_style": "primary",
-            "button_2_text": "CONTACT US!",
-            "button_2_link": "",
-            "button_2_style": "secondary"
-          }
-        }
-      },
-      "block_order": [
-        "slide_ByhdDU",
-        "slide_P4Lgrd"
-      ],
-      "settings": {}
-    }
   },
   "order": [
     "announcement-bar",
     "header",
-    "hero-section"
   ]
 }
